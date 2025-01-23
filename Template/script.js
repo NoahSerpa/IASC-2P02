@@ -9,7 +9,7 @@ const canvas = document.querySelector('.webgl')
 
 // Scene
 const scene = new THREE.Scene()
-scene.background = new THREE.Color('gray')
+scene.background = new THREE.Color('lightblue')
 
 // Camera
 const camera = new THREE.PerspectiveCamera(
@@ -32,13 +32,22 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 ** MESHES **
 ***********/
 
-// test sphere
-const sphereGeometry = new THREE.SphereGeometry(1)
-const sphereMaterial = new THREE.MeshNormalMaterial()
-const testSphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
+// Cube
+const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 ); 
+const cubeMaterial = new THREE.MeshNormalMaterial(); 
+const cube = new THREE.Mesh( cubeGeometry, cubeMaterial ); 
 
-scene.add(testSphere)
-testSphere.position.set(0, 0, -5)
+scene.add( cube );
+cube.position.set(0, 0, -5)
+
+//torus
+const geometry = new THREE.TorusGeometry( 2, 0.2, 16, 100 ); 
+const material = new THREE.MeshNormalMaterial( { color: 0xffff00 } ); 
+const torus = new THREE.Mesh( geometry, material ); 
+
+scene.add( torus );
+torus.position.set(0, 0, -5)
+
 /*******************
 ** ANIMATION LOOP **
 *******************/
@@ -47,6 +56,17 @@ const clock = new THREE.Clock()
 const animation = () => {
     // return elapsed time
     const elapsedTime = clock.getElapsedTime()
+
+    // animate cube
+    cube.rotation.y = elapsedTime 
+    cube.rotation.x = elapsedTime 
+    cube.rotation.z = elapsedTime 
+    cube.scale.x = Math.sin(elapsedTime)
+    cube.scale.y = Math.sin(elapsedTime)
+    cube.scale.z = Math.sin(elapsedTime)
+
+    //animate torus
+    torus.rotation.y = elapsedTime 
 
     // renderer
     renderer.render(scene,camera)

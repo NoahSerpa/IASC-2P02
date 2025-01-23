@@ -9,7 +9,7 @@ const canvas = document.querySelector('.webgl')
 
 // Scene
 const scene = new THREE.Scene()
-scene.background = new THREE.Color('pink')
+scene.background = new THREE.Color('lavender')
 
 // Camera
 const camera = new THREE.PerspectiveCamera(
@@ -46,6 +46,7 @@ scene.add( cube );
 scene.add(testSphere)
 testSphere.position.set(0, 0, -5)
 cube.position.set(0, 0, -5)
+
 /*******************
 ** ANIMATION LOOP **
 *******************/
@@ -59,11 +60,12 @@ const animation = () => {
     testSphere.position.y = Math.sin(elapsedTime)
     testSphere.position.x = -Math.cos(elapsedTime)
     testSphere.rotation.y = elapsedTime * 2
-    testSphere.rotation.y = elapsedTime * 2
+    testSphere.rotation.x = elapsedTime * 2
 
     // animate cube
-    cube.position.y = -Math.sin(elapsedTime)
-    cube.position.x = Math.cos(elapsedTime)
+    const distance = 3
+    cube.position.y = Math.sin(elapsedTime * 2) * distance
+    cube.position.x = -Math.cos(elapsedTime * 2) * distance
     cube.rotation.y = elapsedTime * 2
     cube.rotation.x = elapsedTime * 2
 
