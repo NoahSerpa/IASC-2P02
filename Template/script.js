@@ -18,7 +18,7 @@ const canvas = document.querySelector('.webgl')
 
 // Scene
 const scene = new THREE.Scene()
-scene.background = new THREE.Color('lightblue')
+scene.background = new THREE.Color('#0A0A0A')
 
 // Camera
 const camera = new THREE.PerspectiveCamera(
@@ -28,7 +28,7 @@ const camera = new THREE.PerspectiveCamera(
     100
 )
 scene.add(camera)
-camera.position.set(0, 0, 0)
+camera.position.set (5, 5, 5)
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
@@ -45,21 +45,18 @@ controls.enableDamping = true
 ** MESHES **
 ***********/
 
-// Cube
-const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 ); 
-const cubeMaterial = new THREE.MeshNormalMaterial(); 
-const cube = new THREE.Mesh( cubeGeometry, cubeMaterial ); 
+// sphere
+const sphereGeo = new THREE.SphereGeometry(1); 
+const sphereMat = new THREE.MeshNormalMaterial(); 
+const sphere = new THREE.Mesh( sphereGeo, sphereMat );
+scene.add( sphere );
+sphere.position.set(5, 5, 5)
 
-scene.add( cube );
-cube.position.set(0, 0, -5)
-
-//torus
-const geometry = new THREE.TorusGeometry( 2, 0.2, 16, 100 ); 
-const material = new THREE.MeshNormalMaterial(); 
-const torus = new THREE.Mesh( geometry, material ); 
-
-scene.add( torus );
-torus.position.set(0, 0, -5)
+const sphereGeo2 = new THREE.SphereGeometry(1); 
+const sphereMat2 = new THREE.MeshNormalMaterial(); 
+const sphere2 = new THREE.Mesh( sphereGeo2, sphereMat2 );
+scene.add( sphere2 );
+sphere2.position.set(3, 3, 3)
 
 /*******
 ** UI **
@@ -76,16 +73,15 @@ const animation = () => {
     // return elapsed time
     const elapsedTime = clock.getElapsedTime()
 
-    // animate cube
-    cube.rotation.y = elapsedTime 
-    cube.rotation.x = elapsedTime 
-    cube.rotation.z = elapsedTime 
-    cube.scale.x = Math.sin(elapsedTime)
-    cube.scale.y = Math.sin(elapsedTime)
-    cube.scale.z = Math.sin(elapsedTime)
+    sphere2.position.z = Math.sin(elapsedTime)
+    sphere2.position.x = Math.sin(elapsedTime)
+    sphere2.position.y = Math.sin(elapsedTime)
 
-    //animate torus
-    torus.rotation.y = elapsedTime 
+    // animate sphere
+
+    sphere.position.z = -Math.sin(elapsedTime)
+    sphere.position.x = -Math.sin(elapsedTime)
+    sphere.position.y = -Math.sin(elapsedTime)
 
     // Update Orbit Controls
     controls.update()
