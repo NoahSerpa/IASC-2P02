@@ -1,0 +1,13 @@
+h1 {
+    font-size: 48;
+    text-align: center;
+    color: navy;
+}
+
+.webgl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: -1;
+}
