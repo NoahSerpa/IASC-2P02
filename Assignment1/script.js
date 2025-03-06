@@ -142,9 +142,9 @@ sun.shadow.mapSize.width = 1024
 sun.shadow.mapSize.height = 1024
 
 //ambient lighjt
-const light = new THREE.AmbientLight( 0x404040 ); // soft white light
-light.intensity = 1.3
-scene.add( light );
+const ambientLight = new THREE.AmbientLight( 0x404040 ); // soft white light
+ambientLight.intensity = 1.3
+scene.add( ambientLight );
 
 /*********************
 ** DOM INTERACTIONS **
@@ -274,11 +274,13 @@ const animation = () => {
     if(domObject.thirdChange) {
         if(lightToggle == true){
             directionalLight.intensity = 0.1
+            ambientLight.intensity = 0
             lightToggle = false
             domObject.thirdChange = false
         }
         else if(lightToggle == false){
-            directionalLight.intensity = 0.5
+            directionalLight.intensity = 1.5
+            ambientLight.intensity = 1.3
             lightToggle = true
             domObject.thirdChange = false
         }
