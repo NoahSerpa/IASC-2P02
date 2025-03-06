@@ -124,7 +124,7 @@ scene.add(group2)
 //Directional Light
 const directionalLight = new THREE.DirectionalLight(
     new THREE.Color('white'),
-    0.5
+    1.5
 )
 scene.add(directionalLight)
 directionalLight.position.set(20, 0, 0)
@@ -140,6 +140,11 @@ sun.target = wall
 sun.castShadow = true
 sun.shadow.mapSize.width = 1024
 sun.shadow.mapSize.height = 1024
+
+//ambient lighjt
+const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+light.intensity = 1.3
+scene.add( light );
 
 /*********************
 ** DOM INTERACTIONS **
