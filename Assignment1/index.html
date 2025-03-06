@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1</title>
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- three.js import map -->
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "https://ga.jspm.io/npm:three@0.172.0/build/three.module.js",
+                "OrbitControls": "https://ga.jspm.io/npm:three@0.172.0/examples/jsm/controls/OrbitControls.js",
+                "lil-gui": "https://ga.jspm.io/npm:lil-gui@0.20.0/dist/lil-gui.esm.js"
+              }
+            }
+        </script>
+        <!-- three.js scene-->
+        <script src="script.js" type="module"></script>
+    </head>
+    <body>
+      <div class="flexbox">
+        <!-- Essay -->
+        <div class="essay">
+          <h2>1. Flatness</h2>
+          <p><span class='clickable' id="part-one">From inside the cave</span> one can only see two piles of sticks. <span class='clickable' id="first-change">As a stick is thrown from one pile to another</span>, the larger pile grows smaller and the smaller pile grows larger. When no more sticks are to be thrown, <span class='clickable' id="second-change">the remainder pile falls onto the other</span> and the timer resets. Perhaps this could allude to how repetitive action while expecting different results can lead to insanity. The piles themselves, once changed, are never the same size nor the size of the sticks. The position of the piles never change and neither does the path the sticks travel. Maybe this could mean how routine is good, but change every now and then is welcome. The piles are always kept in an orderly fashion. The sticks always follow the same path as if they aren’t being thrown, but guided. Perhaps someone really likes moving sticks from one pile into another and has gotten incredibly good at it. The interval at which the sticks are thrown changes by each throw. Almost as if examining each stick. Maybe someone is seeking change. By altering the routine ever so slightly but when faced with large changes they ultimately return to what they know and are comfortable with. Perhaps insanity isn’t too far off.
+          </p>
+          <p>
+          Nick Sousanis concept of flatness refers to the monotony of average everyday life. In my opinion, flatness means repetitive action in everything someone does. It means a complete lack of originality and creativity to the point where someone won't ever take risks and then miss out on opportunities for greatness. However, I believe the issue of flatness is learned. A ‘flat’ person worries if they leave the bubble they spent so long building they might hurt themselves. So to solve this issue, they never leave the bubble. This person lacks the dimension of change, thus flatness meaning a metaphorical two dimensional person. This lines up with the people of the cave in the sense that what the cave people know is taught to them. They have only ever lived and known the cave and the shadows of the sticks. They can’t mentally imagine a world beyond the sticks. Let alone physically travel to it. They are trapped in the two dimensional bubble and forced through a monotonous life cycle completely devoid of originality or creativity. The worldview of the people in the cave is flat because it is all they know and can't imagine a world with change.
+          </p>
+          <h2>2. Seeing Double</h2>
+          <p><span class='clickable' id="part-two">Those outside the cave</span> see a completely different scene. A book stands atop a pedestal. Full of stories, lore, documentaries, fiction and nonfiction. At random times, the book flips a page and a new page is open for examination. Casting onto the book is a <span class='clickable' id="third-change">small lamp light.</span> The light is at an angle that allows the shadow to cast onto the cave wall while also allowing the pages to be readable. Once the book is finished, the light turns off and the reader has finished reading for the day. As the sun outside the cave rises again, a new book is opened. The lamp turns back on and the process repeats again. <span class='clickable' id="fourth-change">A small sliver through the walls</span> of the cave allows natural light to always come in. It isn’t ever bright, but it never has to be. The lamp is the signal of when to sleep and when to wake. Out of sight from the lamp lies two very large piles of books, half read and half unread. The titles and authors range from completely different genres, cultures and even languages. It is a fair assumption that multiple people read in the cave. </p>
+
+          <p>Nick Sousanis concept of seeing double is seeing multiple views pieced into one. With only one view, the story is misaligned and doesn’t make sense. But when both views are put together, the story becomes woven together. It’s like listening to two people argue but you only hear one person’s side. It is impossible to make a decision without both sides. To me, seeing double is similar to the saying “seeing the bigger picture.” There isn’t an actual picture, but it means to grasp important pieces of information and put them together to reach an educated conclusion. The view of the cave people is created from flatness. To the people outside the cave, it is as simple as reading a book. But inside the cave, that book and lamp is everything. It is the source of their imagination, entertainment, and the source of all of their knowledge. When the book closes, it is bedtime and when the light turns on again, it is time to wake. The two worlds are connected by the action of flipping a page. The person reading is simply reading and the people of the cave remain in the cave. Trapped in a cycle of throwing sticks. </p>
+        </div>
+        <!-- Scene -->
+        <div class="scene">
+          <canvas class="webgl"></canvas>
+        </div>
+      </div>
+    </body>
