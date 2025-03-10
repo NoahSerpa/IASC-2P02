@@ -3,9 +3,8 @@ import { OrbitControls } from "OrbitControls";
 import * as dat from "lil-gui";
 
 /**********
-** SCENE **
+** SETUP **
 **********/
-
 // Sizes
 const sizes = {
     width: window.innerWidth,
@@ -13,6 +12,26 @@ const sizes = {
     aspectRatio: window.innerWidth / window.innerHeight
 }
 
+//resizing
+window.addEventListener('resize', () => 
+{
+    //update sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+    sizes.aspectRatio = window.innerWidth / window.innerHeight
+
+    //update camera
+    camera.aspect = sizes.aspectRatio
+    camera.updateProjectionMatrix()
+
+    //update renderer
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
+
+/**********
+** SCENE **
+**********/
 // Canvas
 const canvas = document.querySelector('.webgl')
 
