@@ -287,7 +287,7 @@ termsFolder
     .name("Term 3")
 
 termsFolder
-    .add(group1, "visible")
+    .add(group3, "visible")
     .name("Term 3 Visibility")
 
 termsFolder
